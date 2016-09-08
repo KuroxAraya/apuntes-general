@@ -1,0 +1,78 @@
+//VERIFICA USERNAME
+    public bool verificaUsuario()
+    {
+        if (txtUser.Text.Trim().Length == 0 || txtUser.Text.Trim().Length < 6)
+        {
+            labelPass.Text = "El username debe tener más de 6 caracteres";
+            return false;
+        }
+        else
+            return true;
+    }
+    
+//VERIFICA PASS
+    public bool verificaPass()
+    {
+        if (txtPass1.Text != txtPass2.Text)
+        {
+            labelPass.Text = "Las contraseñas NO deben ser distintas";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+//VERIFICA FECHA
+    public bool verificaFecha()
+    {
+        if (Calendar1.SelectedDate > DateTime.Today && Calendar1.SelectedDate < DateTime.Parse("01/01/1998"))
+        {
+            labelFecha.Text = "Estás fuera del rango de edad correspondiente";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+//VERIFICA SEXO
+    public bool verificaSexo()
+    {
+        if (!RadioButton1.Checked && !RadioButton2.Checked)
+        {
+            labelSexo.ForeColor = System.Drawing.Color.Red;
+            labelSexo.Text = "Debe seleccionar un sexo";
+            return false;
+        }
+        else
+        {
+            labelSexo.ForeColor = System.Drawing.Color.Green;
+            labelSexo.Text = "Seleccionado";
+            return true;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
